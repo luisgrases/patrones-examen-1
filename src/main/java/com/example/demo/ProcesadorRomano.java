@@ -1,9 +1,9 @@
 package com.example.demo;
 
 public class ProcesadorRomano {
-	public static int convierte(String string) {
+	public static int convierte(String numerosRomanos) {
 		int result;
-		switch (string) {
+		switch (numerosRomanos) {
 			case "":  result = 0;
 	         	break;
 	        case "I":  result = 1;
@@ -12,7 +12,6 @@ public class ProcesadorRomano {
 	                 break;
 	        case "III":  result = 3;
 	                 break;
-	        case "IIII":  throw new IllegalArgumentException();
 	        case "V":  result = 5;
 	                 break;
 	        case "X":  result = 10;
