@@ -5,14 +5,15 @@ import java.util.HashMap;
 public class ProcesadorRomano {
 	public static int convierte(String numerosRomanos) {
 		int result = 0;
+		
 		HashMap<Integer,Integer> counters = new HashMap<Integer,Integer>();
 		counters.put(1, 3);
-		counters.put(5, 3);
+		counters.put(5, Integer.MAX_VALUE);
 		counters.put(10, 3);
 		counters.put(50, 1);
 		counters.put(100, 3);
 		counters.put(500, 1);
-		counters.put(1000, 3);
+		counters.put(1000, Integer.MAX_VALUE);
 		
 		int lastAdded = Integer.MAX_VALUE;;
 		
