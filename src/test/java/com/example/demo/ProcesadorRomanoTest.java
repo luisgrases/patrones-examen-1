@@ -60,55 +60,67 @@ public class ProcesadorRomanoTest {
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void convierteRetornaErrorSiRecibeCuatroIMayuscula() {
+	public void retornaErrorSiRecibeCuatroIMayuscula() {
 		ProcesadorRomano.convierte("IIII");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void convierteRetornaErrorSiRecibeCincoIMayuscula() {
+	public void retornaErrorSiRecibeCincoIMayuscula() {
 		ProcesadorRomano.convierte("IIIII");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void convierteRetornaErrorSiRecibeCuatroXMayuscula() {
+	public void retornaErrorSiRecibeCuatroXMayuscula() {
 		ProcesadorRomano.convierte("XXXX");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void convierteRetornaErrorSiRecibeCincoXMayuscula() {
+	public void retornaErrorSiRecibeCincoXMayuscula() {
 		ProcesadorRomano.convierte("XXXXX");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void convierteRetornaErrorSiRecibe2LIMayuscula() {
+	public void retornaErrorSiRecibe2LIMayuscula() {
 		ProcesadorRomano.convierte("LL");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void convierteRetornaErrorSiRecibe3LIMayuscula() {
+	public void retornaErrorSiRecibe3LIMayuscula() {
 		ProcesadorRomano.convierte("LLL");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void convierteRetornaErrorSiRecibeCuatroCMayuscula() {
+	public void retornaErrorSiRecibeCuatroCMayuscula() {
 		ProcesadorRomano.convierte("CCCC");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void convierteRetornaErrorSiRecibeCincoCMayuscula() {
+	public void retornaErrorSiRecibeCincoCMayuscula() {
 		ProcesadorRomano.convierte("CCCCC");
 	}
 	
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void convierteRetornaErrorSiRecibe2DIMayuscula() {
+	public void retornaErrorSiRecibe2DIMayuscula() {
 		ProcesadorRomano.convierte("DD");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void convierteRetornaErrorSiRecibe3DIMayuscula() {
+	public void retornaErrorSiRecibe3DIMayuscula() {
 		ProcesadorRomano.convierte("DDD");
 	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void retornaErrorSiLasLetrasSonAscendentes() {
+		ProcesadorRomano.convierte("XXL");
+	}
+	
+	@Test
+	public void retornaElValorEsperadoSiLasLetrasSonEnValorDescendente() {
+		assertEquals(ProcesadorRomano.convierte("LXX"), 70);
+	}
+	
+	
 	
 	
 
