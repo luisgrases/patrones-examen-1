@@ -26,9 +26,56 @@ public class ProcesadorRomanoTest {
 		assertEquals(ProcesadorRomano.convierte("III"), 3);
 	}
 	
+	
 	@Test(expected = IllegalArgumentException.class)
 	public void convierteRetornaErrorSiRecibeCuatroIMayuscula() {
 		ProcesadorRomano.convierte("IIII");
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void convierteRetornaErrorSiRecibeCincoIMayuscula() {
+		ProcesadorRomano.convierte("IIIII");
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void convierteRetornaErrorSiRecibeCuatroXMayuscula() {
+		ProcesadorRomano.convierte("XXXX");
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void convierteRetornaErrorSiRecibeCincoXMayuscula() {
+		ProcesadorRomano.convierte("XXXXX");
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void convierteRetornaErrorSiRecibe2LIMayuscula() {
+		ProcesadorRomano.convierte("LL");
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void convierteRetornaErrorSiRecibe3LIMayuscula() {
+		ProcesadorRomano.convierte("LLL");
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void convierteRetornaErrorSiRecibeCuatroCMayuscula() {
+		ProcesadorRomano.convierte("CCCC");
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void convierteRetornaErrorSiRecibeCincoCMayuscula() {
+		ProcesadorRomano.convierte("CCCCC");
+	}
+	
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void convierteRetornaErrorSiRecibe2DIMayuscula() {
+		ProcesadorRomano.convierte("DD");
+	}
+	
+	@Test(expected = IllegalArgumentException.class)
+	public void convierteRetornaErrorSiRecibe3DIMayuscula() {
+		ProcesadorRomano.convierte("DDD");
 	}
 	
 	@Test
