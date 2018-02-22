@@ -30,32 +30,32 @@ public class ProcesadorRomanoTest {
 	}
 	
 	@Test
-	public void retorna5SiRecibeUnaV() {
+	public void retorna5SiRecibeUnaVMayuscula() {
 		assertEquals(ProcesadorRomano.convierte("V"), 5);
 	}
 	
 	@Test
-	public void retorna10SiRecibeUnaX() {
+	public void retorna10SiRecibeUnaXMayuscula() {
 		assertEquals(ProcesadorRomano.convierte("X"), 10);
 	}
 	
 	@Test
-	public void retorna50SiRecibeUnaL() {
+	public void retorna50SiRecibeUnaLMayuscula() {
 		assertEquals(ProcesadorRomano.convierte("L"), 50);
 	}
 	
 	@Test
-	public void retorna100SiRecibeUnaC() {
+	public void retorna100SiRecibeUnaCMayuscula() {
 		assertEquals(ProcesadorRomano.convierte("C"), 100);
 	}
 	
 	@Test
-	public void retorna500SiRecibeUnaD() {
+	public void retorna500SiRecibeUnaDMayuscula() {
 		assertEquals(ProcesadorRomano.convierte("D"), 500);
 	}
 	
 	@Test
-	public void retorna1000SiRecibeUnaM() {
+	public void retorna1000SiRecibeUnaMMayuscula() {
 		assertEquals(ProcesadorRomano.convierte("M"), 1000);
 	}
 	
@@ -80,12 +80,12 @@ public class ProcesadorRomanoTest {
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void retornaErrorSiRecibe2LIMayuscula() {
+	public void retornaErrorSiRecibe2LMayuscula() {
 		ProcesadorRomano.convierte("LL");
 	}
 	
 	@Test(expected = IllegalArgumentException.class)
-	public void retornaErrorSiRecibe3LIMayuscula() {
+	public void retornaErrorSiRecibe3LMayuscula() {
 		ProcesadorRomano.convierte("LLL");
 	}
 	

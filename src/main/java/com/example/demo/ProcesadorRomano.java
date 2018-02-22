@@ -1,36 +1,42 @@
 package com.example.demo;
 
+import java.util.HashMap;
+
 public class ProcesadorRomano {
 	public static int convierte(String numerosRomanos) {
 		int result = 0;
-		int ICounter = 0;
-		int XCounter = 0;
-		int LCounter = 0;
-		int CCounter = 0;
-		int DCounter = 0;
+		HashMap<Integer,Integer> counters = new HashMap<Integer,Integer>();
+		counters.put(1, 3);
+		counters.put(5, 3);
+		counters.put(10, 3);
+		counters.put(50, 1);
+		counters.put(100, 3);
+		counters.put(500, 1);
+		counters.put(1000, 3);
 		
 		int lastAdded = Integer.MAX_VALUE;;
 		
 		for (char ch: numerosRomanos.toCharArray()) {
-			switch (ch) {
-		        case 'I':  if(ICounter < 3 && lastAdded >= 1) { result += 1; ICounter++; lastAdded = 1;} else throw new IllegalArgumentException();
-		                 break;
-		        case 'V':  if (lastAdded >= 5) { result += 5; lastAdded = 5;} else throw new IllegalArgumentException();
-		                 break;
-		        case 'X':  if(XCounter < 3 && lastAdded >= 10) { result += 10; XCounter++; lastAdded = 10;} else throw new IllegalArgumentException();
-		                 break;
-		        case 'L':  if(LCounter < 1 && lastAdded >= 50) {result += 50; LCounter++; lastAdded = 50;} else throw new IllegalArgumentException();
-		                 break;
-		        case 'C':  if(CCounter < 3 && lastAdded >= 100) {result += 100; CCounter++; lastAdded = 100;} else throw new IllegalArgumentException();
-		                 break;
-		        case 'D':  if(DCounter < 1 && lastAdded >= 500) {result += 500; DCounter++; lastAdded = 500;} else throw new IllegalArgumentException();
-		                 break;
-		        case 'M': if(lastAdded >= 1000) { result += 1000; lastAdded = 1000; } else throw new IllegalArgumentException();
-		                 break;
-		        default: throw new IllegalArgumentException();
-			}
+			int value = mapRomanChar(ch);
+			if(value > lastAdded) throw new IllegalArgumentException();
+			if(counters.get(value) > 0) { counters.put(value, counters.get(value)-1); } else throw new IllegalArgumentException();
+			result += value;
+			lastAdded = value;
 		}
 		return result;
+	}
+	
+	private static int mapRomanChar(char ch) {
+		switch (ch) {
+	        case 'I': return 1;
+	        case 'V':  return 5;
+	        case 'X': return 10;
+	        case 'L':  return 50;
+	        case 'C':  return 100;
+	        case 'D':  return 500;
+	        case 'M':return 1000;
+	        default: throw new IllegalArgumentException();
+		}
 	}
 		
 		
